@@ -13,6 +13,10 @@ function App() {
 
   const inCorrectLetters = guessedLetters.filter(letter => !wordToGuess.includes(letter))
 
+  const isLoser = inCorrectLetters.length >= 6
+  const isWinner = wordToGuess.split("").every(letter => guessedLetters.includes(letter))
+  const isGameOver = isLoser || isWinner
+
   const addGuessedLetter = useCallback((letter:string) => {
     if (guessedLetters.includes(letter)) return 
     setGuessedLetters(currentLetters => [...currentLetters, letter])
@@ -46,7 +50,11 @@ function App() {
   }}>
 
     <div style={{fontSize: "2rem", textAlign: "center"}}>
-      <h1>Lose Win</h1>
+      {isWinner && "Panalo galing mo"}
+      {isLoser && "Talo ka Jessy"}
+      {!isWinner && !isLoser && "Hulaan mo ang salita"}
+      <div></div>
+      {isGameOver && <span style={{fontSize: "2rem"}}>Ang salita ay: {wordToGuess}</span>}
     </div>
 
     <HangmanDrawing numberOfGuesses={inCorrectLetters.length}/>
