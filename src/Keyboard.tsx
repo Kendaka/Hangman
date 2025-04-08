@@ -20,7 +20,7 @@ export function Keyboard() {
                 return (
                 <button className={`${styles.btn} `} key={key}>{key}</button>
                 ) 
-            })}
+            })} 
         </div>
     )
 }
