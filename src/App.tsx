@@ -17,7 +17,7 @@ function App() {
   const inCorrectLetters = guessedLetters.filter(letter => !wordToGuess.includes(letter))
 
   const isLoser = inCorrectLetters.length >= 6
-  const isWinner = wordToGuess.split("").every(letter => guessedLetters.includes(letter) || wordToGuess.split("").every(letter => guessedLetters.includes(letter) || hintLetters.includes(letter))
+  const isWinner = wordToGuess.split("").every(letter => guessedLetters.includes(letter) || wordToGuess.split("").  every(letter => guessedLetters.includes(letter) || hintLetters.includes(letter)))
   const isGameOver = isLoser || isWinner
 
   const addGuessedLetter = useCallback((letter:string) => {
