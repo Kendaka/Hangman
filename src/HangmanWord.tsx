@@ -10,11 +10,11 @@ export function HangmanWord({ guessedLetters, hintLetters, wordToGuess, reveal =
         <div 
             style={{ 
                 display: "flex", 
-                gap: ".25em", 
+                gap: ".30em", 
                 fontSize: "6rem", 
                 fontWeight: "bold", 
                 textTransform: "uppercase", 
-                fontFamily: "monospace" 
+                fontFamily: "monospace", 
             }}
         >
             {wordToGuess.split("").map((letter, index) => (
