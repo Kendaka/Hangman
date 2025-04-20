@@ -82,7 +82,7 @@ type HangmanDrawingProps = {
 export function HangmanDrawing({numberOfGuesses} : HangmanDrawingProps) {
     return (
 
-    <div style={{position: "relative"}}>
+    <div style={{position: "relative", marginBottom: "-50px"}}>
         {BODY_PARTS.slice(0, numberOfGuesses)}
         <div style={{ height: "50px", width: "10px", background: "black", position: "absolute", top: 0, right: 0}}/>
         <div style={{ height: "10px", width: "200px", background: "black", marginLeft: "120px"}}/>
